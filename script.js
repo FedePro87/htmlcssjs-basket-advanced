@@ -67,17 +67,6 @@ function getTeamByName(teams,selectedTeam){
   return team;
 }
 
-function getIndexByTeamName(selectedTeam,teams){
-  var index;
-
-  for (var i = 0; i < teams.length; i++) {
-    if (selectedTeam==teams[i].teamName) {
-      index=i;
-    }
-  }
-  return index;
-}
-
 function clearUi(){
   $("div.selection").html("");
 
@@ -117,7 +106,7 @@ function updateUi(teams){
   playersSelect.click(function(){
     var me=$(this);
     var player= getPlayerById(players, me.text());
-    populateSpans(player);
+    populateStats(player);
   });
 }
 
@@ -132,7 +121,7 @@ function getPlayerById(players,selectedId){
   return player;
 }
 
-function populateSpans(player){
+function populateStats(player){
   var idDom=$("#id > span.content");
   var pointsDom=$("#points > span.content");
   var bounceDom=$("#bounce > span.content");
@@ -148,7 +137,7 @@ function populateSpans(player){
   threePercDom.text(player.threePerc + "%");
 }
 
-function teamExist(team,teams){
+function teamExists(team,teams){
   for (var i = 0; i < teams.length; i++) {
     if (teams[i].teamName==team) {
       return true;
@@ -171,7 +160,7 @@ function init(){
   var teams= getTeams();
   updateList(teams);
   selectedTeam.on("change",function(){
-    if (teamExist(selectedTeam.val(),teams)) {
+    if (teamExists(selectedTeam.val(),teams)) {
       updateUi(teams);
     }
   });
