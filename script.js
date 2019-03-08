@@ -17,24 +17,22 @@ function getTeams(){
     {"teamName":"Boston Celtics","roster":["Aron Baynes","Jaylen Brown","PJ Dozier","Gordon Hayward","Al Horford","RJ Hunter2","Kyrie Irving","Marcus Morris","Semi Ojeleye","Terry Rozier"]},
     {"teamName":"Los Angeles Lakers","roster":["Lonzo Ball","Isaac Bonga","Reggie Bullock","Alex Caruso","Tyson Chandler","Josh Hart","Brandon Ingram","LeBron James","Kyle Kuzma","Mike Muscala","Rajon Rondo"]}
   ];
+
   return teams;
 }
 
-function getPlayerName(index){
+function getPlayerNames(team){
   var player="";
-  var teams=getTeams();
-  var roster=teams[index].roster;
-  player=roster[getRandom(0,9)];
+  player=team[getRandom(0,team.length-1)];
   return player;
 }
 
-function getPlayer(index){
+function getPlayerStats(team){
   var twoPerc=getRandom(0,100);
   var threePerc=100-twoPerc;
 
-
   var player={
-    "id": getPlayerName(index),
+    "id": getPlayerNames(team),
     "points": getRandom(0,100),
     "bounce": getRandom(0,20),
     "mistake": getRandom(0,50),
@@ -45,14 +43,15 @@ function getPlayer(index){
   return player;
 }
 
-function getAllPlayers(index){
+function getRoster(team){
   var players=[];
+  var roster=team.roster;
 
-  while (players.length < 10) {
-    var player=getPlayer(index);
-    if (!isPresent(player,players)) {
-      players.push(player);
-    }
+  while (players.length<roster.length) {
+      var player=getPlayerStats(roster);
+      if (!isPresent(player,players)) {
+        players.push(player);
+      }
   }
 
   return players;
@@ -102,8 +101,7 @@ function updateUi(teams){
   var teamsSelection=$("#selected-team");
   var selectedTeam=teamsSelection.val();
   var team= getTeamByName(teams,selectedTeam);
-  var selectedIndex=getIndexByTeamName(selectedTeam,teams);
-  var players= getAllPlayers(selectedIndex);
+  var players= getRoster(team);
 
   var selection=$("div.selection");
 
