@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Basket</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <div class="container-wrapper">
+    <div class="container">
+      <h1>STATISTICHE PARTITA</h1>
+      <input id="selected-team" type="text" name="" value="" list="teams" placeholder="Scegli squadra...">
+      <datalist id="teams"></datalist>
+      <div class="selection-wrapper">
+        <div class="selection"></div>
+        <div class="stats">
+          <div class="player-wrapper">
+            <p id="id"><b>NOME: </b><span class="content"></span></p>
+            <p id="points"><b>PUNTI: </b><span class="content"></span></p>
+            <p id="bounce"><b>RIMBALZI: </b><span class="content"></span></p>
+            <p id="mistake"><b>ERRORI: </b><span class="content"></span></p>
+            <p id="twoPerc"><b>PERCENTUALE TIRI DA DUE: </b><span class="content"></span></p>
+            <p id="threePerc"><b>PERCENTUALE TIRI DA TRE: </b><span class="content"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

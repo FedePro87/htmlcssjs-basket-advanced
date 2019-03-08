@@ -1,0 +1,62 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image:url("http://www.dynamicabasket.it/images/back.jpg");
+  background-size: cover;
+}
+
+#selected-team{
+  text-align: center;
+}
+
+.container-wrapper{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  text-align: center;
+  color: white;
+}
+
+.selection-wrapper{
+  display: flex;
+}
+
+.selection{
+  align-self: center;
+  margin-right: 40px;
+}
+
+.selection p{
+  cursor: pointer;
+}
+
+p.player:hover{
+  border-right: 2px double #1a067c;
+}
+
+.player{
+  height: 30px;
+  padding: 0 15px;
+  border-right: 2px double white;
+  line-height: 30px;
+}
+
+.container h1,.container input,.player-wrapper p{
+  margin: 15px 0;
+}
+
+span.content{
+  color: #1b1e79;
+}
