@@ -94,6 +94,8 @@ function updateUi(teams){
 
   var selection=$("div.selection");
 
+  selection.css("overflow-y","scroll");
+
   for (var i = 0; i < players.length; i++) {
     var newP= document.createElement("p");
     var selectP=$(newP);

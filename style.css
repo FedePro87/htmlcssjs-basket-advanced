@@ -35,7 +35,6 @@ body{
 
 .selection{
   margin-right: 40px;
-  overflow-y: scroll;
 }
 
 .selection::-webkit-scrollbar {
