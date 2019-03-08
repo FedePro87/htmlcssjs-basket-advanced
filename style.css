@@ -35,20 +35,37 @@ body{
 
 .selection{
   margin-right: 40px;
+  overflow-y: scroll;
+}
+
+.selection::-webkit-scrollbar {
+
+    width: 5px;
+}
+
+.selection::-webkit-scrollbar-track{
+  background-color: rgba(243,243,243,0.4);
+  border-radius: 10px;
+}
+
+.selection::-webkit-scrollbar-thumb {
+  background-color: orangered;
+  outline: 1px solid slategrey;
+  border-radius: 10px;
 }
 
 .selection p{
   cursor: pointer;
 }
 
-p.player:hover{
+/* p.player:hover{
   border-right: 2px double #1a067c;
-}
+} */
 
 .player{
-  height: 30px;
+  height: 45px;
   padding: 0 15px;
-  border-right: 2px double white;
+  /* border-right: 2px double white; */
   line-height: 30px;
 }
 
